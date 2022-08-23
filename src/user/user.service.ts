@@ -22,7 +22,7 @@ export class UserService {
     return this.userRepo.findOne(id);
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
+  update(id: any, updateUserDto: UpdateUserDto) {
     updateUserDto.id = id;
     if (updateUserDto.password) {
       updateUserDto.password = this.hash(updateUserDto.password);
